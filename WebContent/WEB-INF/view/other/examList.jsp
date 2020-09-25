@@ -134,14 +134,13 @@
 					success: function(result){
 						console.log(result);
 						var columns = [];  
-			            $.each(result, function(i, course){  
+			            $.each(result, function(i, course){
 			                var column={};  
 			                column["field"] = "course"+course.id;    
 			                column["title"] = course.name;  
 			                column["width"] = 70;  
 			                column["resizable"] = false;  
-			                column["sortable"] = true;  
-			                
+			                column["sortable"] = true;
 			                columns.push(column);//当需要formatter的时候自己添加就可以了,原理就是拼接字符串.  
 			            }); 
 			            

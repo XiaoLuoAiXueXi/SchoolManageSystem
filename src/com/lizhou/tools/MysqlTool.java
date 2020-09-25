@@ -45,7 +45,7 @@ public class MysqlTool {
 			conn.setAutoCommit(false);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+			}
 	}
 	
 	/**

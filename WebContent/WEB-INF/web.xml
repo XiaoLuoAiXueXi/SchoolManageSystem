@@ -93,6 +93,15 @@
     <servlet-class>com.lizhou.servlet.ClazzServlet</servlet-class>
   </servlet>
   <servlet-mapping>
+    <servlet-name>HealthServlet</servlet-name>
+    <url-pattern>/HealthServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>健康</description>
+    <servlet-name>HealthServlet</servlet-name>
+    <servlet-class>com.lizhou.servlet.HealthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>ClazzServlet</servlet-name>
     <url-pattern>/ClazzServlet</url-pattern>
   </servlet-mapping>

@@ -19,7 +19,8 @@ import com.lizhou.tools.StringTool;
  * @author bojiangzhou
  *
  */
-public class CourseServlet extends HttpServlet {
+public class
+CourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	private CourseService service = new CourseService();
@@ -35,7 +36,7 @@ public class CourseServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//获取请求的方法
 		String method = request.getParameter("method");
-		
+		System.out.println("at courseServlet");
 		if("CourseList".equalsIgnoreCase(method)){ //获取所有课程
 			courseList(request, response);
 		} else if("AddCourse".equalsIgnoreCase(method)){ //添加课程

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="utf-8">
@@ -49,7 +49,7 @@
 				data: data, 
 				dataType: "text", //返回数据类型
 				success: function(msg){
-					if("vcodeError" == msg){
+                    if("vcodeError" == msg){
 						$.messager.alert("消息提醒", "验证码错误!", "warning");
 						$("#vcodeImg").click();//切换验证码
 						$("input[name='vcode']").val("");//清空验证码输入框
@@ -90,19 +90,20 @@
       <div class="row cl">
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-8">
-          <input id="" name="account" type="text" placeholder="账户" class="input-text size-L">
+          <input id="account" name="account" type="text" placeholder="账户" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-8">
-          <input id="" name="password" type="password" placeholder="密码" class="input-text size-L">
+          <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <div class="formControls col-8 col-offset-3">
           <input class="input-text size-L" name="vcode" type="text" placeholder="请输入验证码" style="width: 200px;">
-          <img title="点击图片切换验证码" id="vcodeImg" src="LoginServlet?method=GetVCode"></div>
+          <img title="点击图片切换验证码" id="vcodeImg" src="LoginServlet?method=GetVCode">
+        </div>
       </div>
       
       <div class="mt-20 skin-minimal" style="text-align: center;">
@@ -119,7 +120,6 @@
 			<label for="radio-3">管理员</label>
 		</div>
 	</div>
-      
       <div class="row">
         <div class="formControls col-8 col-offset-3">
           <input id="submitBtn" type="button" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">

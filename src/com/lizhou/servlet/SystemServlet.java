@@ -33,7 +33,7 @@ public class SystemServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//获取请求的方法
 		String method = request.getParameter("method");
-		
+		System.out.println("at sys view");
 		if("LoginOut".equals(method)){ //退出系统
 			loginOut(request, response);
 		} else if("toAdminView".equalsIgnoreCase(method)){ //到管理员界面
@@ -44,6 +44,12 @@ public class SystemServlet extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/view/teacher/teacher.jsp").forward(request, response);
 		} else if("toAdminPersonalView".equals(method)){ //到系统管理员系统设置界面
 			request.getRequestDispatcher("/WEB-INF/view/admin/adminPersonal.jsp").forward(request, response);
+		} else if("toPersonalHealthView".equals(method)){ //到系统管理员系统设置界面
+		request.getRequestDispatcher("/WEB-INF/view/health/personHealth.jsp").forward(request, response);
+		} else if("toHealthYesView".equals(method)) { //到系统管理员系统设置界面
+			request.getRequestDispatcher("/WEB-INF/view/health/healthYes.jsp").forward(request, response);
+		}else if("toTodayHealthView".equals(method)){ //到系统管理员系统设置界面
+			request.getRequestDispatcher("/WEB-INF/view/health/todayHealTol.jsp").forward(request, response);
 		}
 	}
 

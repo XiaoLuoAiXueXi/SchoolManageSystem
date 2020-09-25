@@ -156,7 +156,6 @@ public class StudentServlet extends HttpServlet {
 		if(!StringTool.isEmpty(clazzid)){
 			student.setClazzid(Integer.parseInt(clazzid));
 		}
-		
 		//获取数据
 		String result = service.getStudentList(student, new Page(page, rows));
 		//返回数据

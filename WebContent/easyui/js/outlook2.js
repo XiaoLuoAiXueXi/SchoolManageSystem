@@ -1,5 +1,6 @@
 ﻿
 $(function(){
+	//把所有的脚本放到一个js文件里，每个函数包括不同位置的功能
 	InitLeftMenu();
 	tabClose();
 	tabCloseEven();
@@ -10,7 +11,8 @@ $(function(){
 //初始化左侧
 function InitLeftMenu() {
 	$("#nav").accordion({animate:false});
-
+	//这里的i是每一个{}，n是里边的键值对群
+	//jQuery语句嵌套
     $.each(_menus.menus, function(i, n) {
 		var menulist ='';
 		menulist +='<ul>';
@@ -18,18 +20,16 @@ function InitLeftMenu() {
 			menulist += '<li><div><a ref="'+o.menuid+'" href="#" rel="' + o.url + '" ><span class="icon '+o.icon+'" >&nbsp;</span><span class="nav">' + o.menuname + '</span></a></div></li> ';
         })
 		menulist += '</ul>';
-
+		//使用了add方法
 		$('#nav').accordion('add', {
             title: n.menuname,
             content: menulist,
             iconCls: 'icon ' + n.icon
         });
-
     });
-
+	//添加动作事件
 	$('.easyui-accordion li a').click(function(){
 		var tabTitle = $(this).children('.nav').text();
-
 		var url = $(this).attr("rel");
 		var menuid = $(this).attr("ref");
 		var icon = getIcon(menuid,icon);
@@ -49,15 +49,15 @@ function InitLeftMenu() {
     $('#nav').accordion('select', t);
 }
 //获取左侧导航的图标
-function getIcon(menuid){
-	var icon = 'icon ';
-	$.each(_menus.menus, function(i, n) {
-		 $.each(n.menus, function(j, o) {
-		 	if(o.menuid==menuid){
-				icon += o.icon;
-			}
-		 })
-	})
+	function getIcon(menuid){
+		var icon = 'icon ';
+		$.each(_menus.menus, function(i, n) {
+			$.each(n.menus, function(j, o) {
+				if(o.menuid==menuid){
+					icon += o.icon;
+				}
+			})
+		})
 
 	return icon;
 }

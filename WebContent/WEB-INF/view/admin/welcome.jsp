@@ -11,9 +11,6 @@
 <div title="欢迎使用" style="padding:20px;overflow:hidden; color:red; " >
 	<p style="font-size: 50px; line-height: 60px; height: 60px;">${systemInfo.schoolName}</p>
 	<p style="font-size: 25px; line-height: 30px; height: 30px;">欢迎使用学生成绩管理系统</p>
-  	<p>开发人员：伯姜洲</p>
-  	<p>开发周期：2015/12/12 --- 2015/12/27（共计15天）</p>
-  	
   	<hr />
   	<h2>系统环境</h2>
   	<p>系统环境：Windows</p>
